@@ -11,7 +11,9 @@ def number_classification(request):
 
     try:
         #A dict
-        num = request.GET.get('number')
+        number = request.GET.get('number')
+
+
         
         
         sum_outer =[]
@@ -20,7 +22,8 @@ def number_classification(request):
 
 
         #removing the minus
-        num =num.strip('-')
+        num =number.strip('-')
+        
         for i in num:
             int_num=int(i)
             digit_sum_list.append(int_num)
@@ -95,13 +98,14 @@ def number_classification(request):
         fun_fact = requests.get(fun_fact_url).text
 
 
+
         data={
-            "number":num,
+            "number":int(number),
             "is_prime":is_prime ,
             "is_perfect": is_perfect,
             "properties":properties,
             
-            "digit_sum":-abs(digit_sum),
+            "digit_sum":digit_sum,
              "fun_fact":fun_fact
 
 
