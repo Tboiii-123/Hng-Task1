@@ -12,7 +12,7 @@ def number_classification(request):
 
     try:
         #A dict
-        num = request.GET.get('num')
+        num = request.GET.get('number')
         
         sum_outer =[]
         properties=[]
@@ -35,23 +35,23 @@ def number_classification(request):
             a=int_num**len(num)
             sum_outer.append(a)
             if int(num) == sum(sum_outer) and whole_number %2 ==0 and len(num)> 1 :
-                properties.append("Armstrong")
+                properties.append("armstrong")
                 properties.append("even")
             
             elif int(num) == sum(sum_outer) and whole_number %2 ==1 and len(num)> 1:
                 if len(sum_outer)==len(num) :
-                    properties.append("Armstrong")
-                    properties.append("Odd")
+                    properties.append("armstrong")
+                    properties.append("odd")
                     
 
             elif whole_number % 2 == 0:
                 if len(sum_outer)==len(num) :
-                    properties.append("Even")
+                    properties.append("even")
                     
 
             elif whole_number % 2 == 1 :
                 if len(sum_outer)==len(num) :
-                    properties.append("Odd")
+                    properties.append("odd")
 
 
         num=int(num)
