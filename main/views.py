@@ -94,11 +94,11 @@ def number_classification(request):
 
 
         data={
-            "Number":num,
+            "number":num,
             "is_prime":is_prime ,
             "is_perfect": is_perfect,
             "properties":properties,
-            "disgit_sum":digit_sum,
+            "digit_sum":digit_sum,
             "fun_fact":fun_fact
 
 
