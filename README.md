@@ -32,14 +32,15 @@ Response:
 
 ```
 {
-    "Number": 371,
-    "is_prime": false,
-    "is_perfect": false,
-    "properties": [
-        "Armstrong",
-        "Odd"
-    ],
-    "fun_fact": "371 is a narcissistic number."
+  "number": 371,
+  "is_prime": false,
+  "is_perfect": false,
+  "properties": [
+    "Armstrong",
+    "Odd"
+  ],
+  "digit_sum": 11,
+  "fun_fact": "371 is a narcissistic number."
 }
 ```
 
