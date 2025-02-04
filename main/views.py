@@ -16,12 +16,22 @@ def number_classification(request):
         
         sum_outer =[]
         properties=[]
+        digit_sum_list=[]
+
+
+        for i in num:
+            int_num=int(i)
+            digit_sum_list.append(int_num)
+
+
+        digit_sum= sum(digit_sum_list)
         
         for i in num:
 
             whole_number=int(num)
     
             int_num =int(i)
+            
             a=int_num**len(num)
             sum_outer.append(a)
             if int(num) == sum(sum_outer) and whole_number %2 ==0 and len(num)> 1 :
@@ -88,7 +98,9 @@ def number_classification(request):
             "is_prime":is_prime ,
             "is_perfect": is_perfect,
             "properties":properties,
+            "disgit_sum":digit_sum,
             "fun_fact":fun_fact
+
 
 
         }
