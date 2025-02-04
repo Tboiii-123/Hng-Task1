@@ -3,16 +3,21 @@
 
 #Project Description
 
-A simple public Api developed as a python Back-edn developer, which retuens JSON response>
+A simple public Api developed as a python Back-end developer, which returns JSON response
 
 The data contains
 
->The registered email address(used to register on HNG 12 Slack workspace)
+>Actual Number needed
 
->THe current datetime in ISO 8601 format (UTC)
+>The prime number of the actual number
 
->The Github URL of the project's codebase
+>The perfect number of the actual number
 
+>The properties of the actual number either Armstrong, odd , even or Armstrong and  odd/even 
+
+>The sum of all the digits
+
+>Fun fact about the actual number fecteched from an api called numperapi using the math type
 
 The Api what build with python using the django rest_framework.
 
@@ -21,15 +26,20 @@ And it was also deployed on render for public access
 
 API Endpoint
 
-URL :https://hng-task-0-hhmx.onrender.com/api/
+URL :https://hng-task1-n172.onrender.com/api/?num=371
 
 Response:
 
 ```
 {
-  "email": "lawalhussein775@gmail.com",
-  "current_datetime": "2025-01-30T20:08:06.847424",
-  "github_url": "https://github.com/Tboiii-123/Hng-Task-0"
+    "Number": 371,
+    "is_prime": false,
+    "is_perfect": false,
+    "properties": [
+        "Armstrong",
+        "Odd"
+    ],
+    "fun_fact": "371 is a narcissistic number."
 }
 ```
 
@@ -41,14 +51,17 @@ You can test the Api on Postman, by adding the endpoint url in it and using a GE
 Set up Instruction:
 
 1.Clone the repository
-
-git clone https://github.com/Tboiii-123/Hng-Task-0.git
+```
+git clone https://github.com/Tboiii-123/Hng-Task1.git
+```
 
 2.Install Packages on cmd
+```
 
 >pip install django
 
 >pip install django_restframework
+```
 
 3.To start Server:
 
