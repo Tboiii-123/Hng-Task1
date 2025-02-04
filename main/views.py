@@ -23,7 +23,13 @@ def number_classification(request):
 
         #removing the minus
         num =number.strip('-')
-        
+
+        #Checking negative
+        handler =int(number)
+        def is_positive(handler):
+            return handler >0
+
+        print(is_positive(handler))
         for i in num:
             int_num=int(i)
             digit_sum_list.append(int_num)
@@ -39,35 +45,37 @@ def number_classification(request):
             
             a=int_num**len(num)
             sum_outer.append(a)
-            if int(num) == sum(sum_outer) and whole_number %2 ==0 and len(num)> 1 :
-                properties.append("Armstrong")
+
+            #and len(num)> 1
+            if int(num) == sum(sum_outer) and whole_number %2 ==0  and is_positive(handler) == True :
+                properties.append("armstrong")
                 properties.append("even")
             
-            elif int(num) == sum(sum_outer) and whole_number %2 ==1 and len(num)> 1:
+            elif int(num) == sum(sum_outer) and whole_number %2 ==1  and is_positive(handler) == True:
                 if len(sum_outer)==len(num) :
-                    properties.append("Armstrong")
-                    properties.append("Odd")
+                    properties.append("armstrong")
+                    properties.append("odd")
                     
 
             elif whole_number % 2 == 0:
                 if len(sum_outer)==len(num) :
-                    properties.append("Even")
+                    properties.append("even")
                     
 
             elif whole_number % 2 == 1 :
                 if len(sum_outer)==len(num) :
-                    properties.append("Odd")
+                    properties.append("odd")
 
 
         num=int(num)
         #For Prime Number
         if num %2 == 0:
           #  print('not a prime number')
-            is_prime=True
+            is_prime=False
 
         else:
          #   print('a prime number')
-            is_prime= False
+            is_prime= True
 
 
         #For Perfect Number
@@ -94,8 +102,8 @@ def number_classification(request):
 
 
            
-        fun_fact_url = f"http://numbersapi.com/{num}/math"
-        fun_fact = requests.get(fun_fact_url).text
+        # fun_fact_url = f"http://numbersapi.com/{num}/math"
+        # fun_fact = requests.get(fun_fact_url).text
 
 
 
@@ -106,7 +114,8 @@ def number_classification(request):
             "properties":properties,
             
             "digit_sum":digit_sum,
-             "fun_fact":fun_fact
+            #  "fun_fact":fun_fact
+
 
 
 
@@ -121,7 +130,7 @@ def number_classification(request):
     except ValueError:
 
         data={
-                 "number":"alphabet",
+                 "number":number,
                  "error":True
             }
         
